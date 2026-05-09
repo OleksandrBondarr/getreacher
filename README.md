@@ -26,7 +26,8 @@ Reacher's theoretical foundations are not original to this project. The followin
 
 What Reacher contributes that is original to this project: R/A/U state classification operating on system states (not statements); on-chain attestation binding via ERC-8004; multi-agent Epistemic Evolution Engine methodology; applied implementation in the DeFAI domain (Olas/Pearl ecosystem).
 
-I disclosed this situation to Oleg Romanchuk and Roman Bondar by direct email on **9 May 2026**, before the Mirror Report's public release on 14 May 2026.
+Disclosure to Oleg Romanchuk and Roman Bondar by direct email is in progress, planned for 9 May 2026 — before the Mirror Report's public release on 14 May 2026. This README will be updated to past tense after the email is sent.
+
 
 ---
 
