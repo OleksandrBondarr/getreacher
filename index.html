@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+
 <title>Reacher — Reachable failure paths for autonomous on-chain agents</title>
- 
+
 <meta name="description" content="Independent epistemic validation for autonomous on-chain agents. R/A/U state classification. ERC-8004 signed attestations. Verification, not coordination.">
- 
+
 <meta property="og:title" content="Reacher">
 <meta property="og:description" content="Reachable failure paths for autonomous on-chain agents. R/A/U state validation. ERC-8004 attestations.">
 <meta property="og:image" content="https://getreacher.xyz/reacher_logo.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://getreacher.xyz">
- 
+
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@getreacher">
- 
+
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f6f5f1'/%3E%3Ctext x='5' y='25' font-family='monospace' font-size='26' font-weight='700' fill='%230a0a0a'%3ER%3C/text%3E%3Ccircle cx='26' cy='24' r='3' fill='%23b91c1c'/%3E%3C/svg%3E">
- 
+
 <style>
   :root {
     --bg: #f6f5f1;
@@ -28,9 +28,9 @@
     --accent: #b91c1c;
     --grid: #eceae3;
   }
- 
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
   html, body {
     background: var(--bg);
     color: var(--ink);
@@ -40,7 +40,7 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
- 
+
   body {
     background-image:
       linear-gradient(to right, var(--grid) 1px, transparent 1px),
@@ -49,14 +49,14 @@
     background-position: center top;
     min-height: 100vh;
   }
- 
+
   .page {
     max-width: 880px;
     margin: 0 auto;
     padding: 48px 32px 96px;
     position: relative;
   }
- 
+
   header.bar {
     display: flex;
     justify-content: space-between;
@@ -69,31 +69,31 @@
     text-transform: uppercase;
     color: var(--muted);
   }
- 
+
   header.bar .left { color: var(--accent); }
- 
+
   .hero {
     margin-bottom: 80px;
   }
- 
+
   .logo-row {
     display: flex;
     align-items: center;
     gap: 12px;
     margin-bottom: 40px;
   }
- 
+
   .logo-row .wordmark {
     font-size: 22px;
     font-weight: 700;
     letter-spacing: -0.02em;
     color: var(--ink);
   }
- 
+
   .logo-row .wordmark .dot {
     color: var(--accent);
   }
- 
+
   h1 {
     font-family: 'Iowan Old Style', 'Iowan', 'Charter', 'Georgia', serif;
     font-size: clamp(34px, 6vw, 56px);
@@ -103,12 +103,12 @@
     margin-bottom: 32px;
     max-width: 760px;
   }
- 
+
   h1 em {
     font-style: italic;
     color: var(--accent);
   }
- 
+
   .lead {
     font-size: 16px;
     line-height: 1.65;
@@ -116,18 +116,18 @@
     max-width: 640px;
     margin-bottom: 56px;
   }
- 
+
   .lead strong {
     color: var(--ink);
     font-weight: 600;
   }
- 
+
   .lead .sub {
     color: var(--ink);
     font-weight: 400;
     font-size: 14px;
   }
- 
+
   /* What we validate */
   .validate {
     border-top: 1px solid var(--rule);
@@ -135,7 +135,7 @@
     margin-bottom: 80px;
     padding: 40px 0 8px;
   }
- 
+
   .validate .vtitle {
     font-size: 11px;
     letter-spacing: 0.18em;
@@ -144,13 +144,13 @@
     margin-bottom: 28px;
     font-weight: 600;
   }
- 
+
   .validate .level {
     margin-bottom: 28px;
     padding-left: 20px;
     border-left: 2px solid var(--accent);
   }
- 
+
   .validate .level .lname {
     font-family: 'Iowan Old Style', 'Iowan', 'Charter', 'Georgia', serif;
     font-size: 19px;
@@ -159,21 +159,21 @@
     margin-bottom: 6px;
     color: var(--ink);
   }
- 
+
   .validate .level .ldesc {
     font-size: 13px;
     line-height: 1.55;
     color: var(--muted);
   }
- 
+
   .validate .level.core {
     border-left-color: var(--ink);
   }
- 
+
   .validate .level.core .lname {
     font-weight: 600;
   }
- 
+
   /* R/A/U grid */
   .rau {
     display: grid;
@@ -183,15 +183,15 @@
     border-bottom: 1px solid var(--rule);
     margin-bottom: 80px;
   }
- 
+
   .rau .cell {
     padding: 32px 20px 32px 20px;
     border-right: 1px solid var(--rule);
     position: relative;
   }
- 
+
   .rau .cell:last-child { border-right: none; }
- 
+
   .rau .letter {
     font-family: 'Iowan Old Style', 'Iowan', 'Charter', 'Georgia', serif;
     font-size: 56px;
@@ -202,7 +202,7 @@
     margin-bottom: 14px;
     display: block;
   }
- 
+
   .rau .label {
     font-size: 12px;
     letter-spacing: 0.1em;
@@ -211,13 +211,13 @@
     margin-bottom: 10px;
     font-weight: 600;
   }
- 
+
   .rau .desc {
     font-size: 13px;
     line-height: 1.5;
     color: var(--ink);
   }
- 
+
   /* Report block */
   .report-block {
     border: 1px solid var(--rule);
@@ -226,7 +226,7 @@
     background: var(--bg);
     position: relative;
   }
- 
+
   .report-block .pill {
     display: inline-block;
     font-size: 10px;
@@ -238,13 +238,13 @@
     margin-bottom: 18px;
     font-weight: 600;
   }
- 
+
   .report-block .pill.pending {
     background: transparent;
     color: var(--muted);
     border: 1px solid var(--muted);
   }
- 
+
   .report-block h2 {
     font-family: 'Iowan Old Style', 'Iowan', 'Charter', 'Georgia', serif;
     font-size: 24px;
@@ -253,48 +253,48 @@
     margin-bottom: 14px;
     line-height: 1.25;
   }
- 
+
   .report-block .meta {
     font-size: 13px;
     color: var(--muted);
     margin-bottom: 16px;
     line-height: 1.55;
   }
- 
+
   .report-block .meta strong {
     color: var(--ink);
     font-weight: 600;
   }
- 
+
   .report-block ul {
     list-style: none;
     margin-top: 14px;
     padding: 0;
   }
- 
+
   .report-block ul li {
     padding: 4px 0;
     font-size: 13px;
     color: var(--ink);
   }
- 
+
   .report-block ul li::before {
     content: "→ ";
     color: var(--accent);
     margin-right: 4px;
   }
- 
+
   .report-block a {
     color: var(--ink);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
   }
- 
+
   .report-block a:hover {
     color: var(--accent);
   }
- 
+
   /* Methodology line */
   .method-line {
     border-top: 1px solid var(--rule);
@@ -308,23 +308,23 @@
     flex-wrap: wrap;
     gap: 12px;
   }
- 
+
   .method-line strong {
     color: var(--ink);
     font-weight: 600;
   }
- 
+
   .contact-line {
     font-size: 14px;
     line-height: 1.5;
     color: var(--muted);
     max-width: 100%;
   }
- 
+
   .contact-line strong {
     color: var(--accent);
   }
- 
+
   /* Social row */
   .social {
     margin-top: 32px;
@@ -333,7 +333,7 @@
     flex-wrap: wrap;
     font-size: 13px;
   }
- 
+
   .social a {
     color: var(--ink);
     text-decoration: none;
@@ -341,18 +341,18 @@
     padding-bottom: 2px;
     transition: color 0.15s ease;
   }
- 
+
   .social a:hover {
     color: var(--accent);
     border-bottom-color: var(--accent);
   }
- 
+
   .social .arrow {
     color: var(--muted);
     font-size: 10px;
     margin-left: 2px;
   }
- 
+
   /* Footer */
   footer {
     margin-top: 64px;
@@ -367,7 +367,7 @@
     flex-wrap: wrap;
     gap: 8px;
   }
- 
+
   /* Mobile */
   @media (max-width: 640px) {
     .page { padding: 32px 20px 64px; }
@@ -381,56 +381,56 @@
     .method-line { flex-direction: column; align-items: flex-start; gap: 8px; }
     header.bar { font-size: 10px; }
   }
- 
+
   /* Subtle entrance */
   @keyframes rise {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
   }
- 
+
   .hero, .rau, .report-block, .method-line, .social {
     animation: rise 0.6s ease-out backwards;
   }
- 
+
   .rau { animation-delay: 0.1s; }
   .report-block { animation-delay: 0.18s; }
   .method-line { animation-delay: 0.26s; }
   .social { animation-delay: 0.32s; }
 </style>
 </head>
- 
+
 <body>
- 
+
 <div class="page">
- 
+
   <header class="bar">
     <span class="left">OPERATIONAL v.001</span>
     <span>REACHERXYZ.ETH · 2026</span>
   </header>
- 
+
   <section class="hero">
- 
+
     <div class="logo-row">
       <span class="wordmark">reacher<span class="dot">.</span></span>
     </div>
- 
+
     <h1>
       Smart contract audits ask: did the agent execute correctly?
       <br><em>Reacher asks: which failure paths can the agent actually reach?</em>
     </h1>
- 
+
     <p class="lead">
       Different question. Different methodology. Different artifact.
       <br><br>
       <strong>Reachable failure paths in systems where verification claims are load-bearing.</strong>
       <br><span class="sub">Autonomous agents, DeFi protocols, and the systems that allocate to them.</span>
       <br><br>
-      R/A/U state validation. ERC-8004 signed attestations.
+      R/A/U state validation across multiple independent models. ERC-8004 signed attestations.
       Verification, not coordination.
     </p>
- 
+
   </section>
- 
+
   <section class="rau">
     <div class="cell">
       <span class="letter">R</span>
@@ -448,27 +448,27 @@
       <p class="desc">Architecturally excluded under protocol constraints.</p>
     </div>
   </section>
- 
+
   <!-- WHAT WE VALIDATE — three levels of one methodology -->
   <section class="validate">
     <div class="vtitle">What we validate</div>
- 
+
     <div class="level core">
       <div class="lname">Autonomous agents</div>
       <p class="ldesc">ERC-8004 deployments and trader-class agents whose claims of self-verification contain reachable self-licensing failure paths — where the decision logic can certify its own action correct without external check.</p>
     </div>
- 
+
     <div class="level">
-      <div class="lname">DeFi protocols where verification can convert to coordination under pressure</div>
-      <p class="ldesc">Systems that assert decentralized verification — oracles that "cannot be overridden," settlement that is "trustless" — but retain a reachable governance path that, under stress, lets a small set of actors redefine the truth the protocol was supposed to enforce.</p>
+      <div class="lname">DeFi protocols where reachable failure paths hide in component interaction</div>
+      <p class="ldesc">Systems that pass line-by-line audits yet retain reachable bad states from how components, oracles, and automated decisions interact under stress — interest-rate, peg, and liquidation logic that each verify correctly in isolation but compose into states the audit was not built to surface.</p>
     </div>
- 
+
     <div class="level">
       <div class="lname">The systems that allocate to them</div>
       <p class="ldesc">Where verification is a load-bearing assumption in a thesis — not just in the protocol, but in the decision to back it — the same classification surfaces the failure paths before capital does.</p>
     </div>
   </section>
- 
+
   <!-- JELLY CASE — protocol-level worked example -->
   <section class="report-block">
     <span class="pill">Case study — JELLY</span>
@@ -496,7 +496,7 @@
       <li><a href="https://app.ens.domains/reacherxyz.eth" target="_blank" rel="noopener">reacherxyz.eth</a></li>
     </ul>
   </section>
- 
+
   <!-- REPORT #002 — FORTHCOMING -->
   <section class="report-block">
     <span class="pill pending">Report #002 — In progress</span>
@@ -507,18 +507,18 @@
       <br><strong>New coverage:</strong> Evaluator role attack surface, Prompt-to-Transaction injection, EIP-8210 Agent Assurance integration.
     </p>
   </section>
- 
+
   <!-- METHODOLOGY LINE -->
   <div class="method-line">
-    <span>Methodology: <strong>Epistemic Evolution Engine v1.1</strong></span>
+    <span>Methodology: <strong>Epistemic Evolution Engine v2.2</strong></span>
     <span>Independent solo-founder operation</span>
   </div>
- 
+
   <!-- CONTACT -->
   <div class="method-line">
     <span class="contact-line">If verification is load-bearing in your system — agent, protocol, or portfolio — <strong>that's what we classify.</strong></span>
   </div>
- 
+
   <!-- SOCIAL -->
   <nav class="social">
     <a href="https://twitter.com/getreacher" target="_blank" rel="noopener">Twitter <span class="arrow">↗</span></a>
@@ -526,13 +526,13 @@
     <a href="https://paragraph.com/@reacherxyz" target="_blank" rel="noopener">Paragraph <span class="arrow">↗</span></a>
     <a href="https://app.ens.domains/reacherxyz.eth" target="_blank" rel="noopener">ENS <span class="arrow">↗</span></a>
   </nav>
- 
+
   <footer>
     <span>Operating async · Ukraine</span>
     <span>© 2026 Reacher</span>
   </footer>
- 
+
 </div>
- 
+
 </body>
 </html>
